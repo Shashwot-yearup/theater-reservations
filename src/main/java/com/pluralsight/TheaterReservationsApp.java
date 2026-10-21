@@ -10,10 +10,12 @@ public class TheaterReservationsApp {
         //gets the user full name.
         System.out.print("Please enter your name:");
         String fullName = scanner.nextLine();
-        String[] namePart = fullName.split(" ");
+        String[] namePart = fullName.split(" "); // split the fullName
 
+        String firstName = namePart[0];
+        String lastName = namePart[1];
 
-        //gets the date when the user want to watch the movie.
+                //gets the date when the user want to watch the movie.
         System.out.print("What date will you be coming (MM/dd/yyyy):");
         String date = scanner.nextLine();
 
@@ -21,7 +23,7 @@ public class TheaterReservationsApp {
         System.out.print("How many tickets would you like?");
         int tickets = scanner.nextInt();
 
-        //System.out.print(tickets + " reserved for " + date + " under " + namePart[1] + namePart[0]);
+        //System.out.print(tickets + " reserved for " + date + " under " + lastName + firstName);
 
     }
 }
