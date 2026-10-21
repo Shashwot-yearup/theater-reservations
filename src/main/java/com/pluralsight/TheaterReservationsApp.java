@@ -32,9 +32,10 @@ public class TheaterReservationsApp {
         //create a out of the date format they gave us.
         LocalDate dateOfEvent = LocalDate.parse(date, formatter);
 
+        String ticketscount = (tickets == 1) ? "ticket" : "tickets";
 
         //sout the result.
-        System.out.print(tickets + " reserved for " + dateOfEvent + " under " + lastName + "," + firstName);
+        System.out.print(tickets + " " + ticketscount + " reserved for " + dateOfEvent + " under " + lastName + "," + firstName);
 
     }
 }
