@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class TheaterReservationsApp {
@@ -15,7 +17,7 @@ public class TheaterReservationsApp {
         String firstName = namePart[0];
         String lastName = namePart[1];
 
-                //gets the date when the user want to watch the movie.
+        //gets the date when the user want to watch the movie.
         System.out.print("What date will you be coming (MM/dd/yyyy):");
         String date = scanner.nextLine();
 
@@ -23,7 +25,16 @@ public class TheaterReservationsApp {
         System.out.print("How many tickets would you like?");
         int tickets = scanner.nextInt();
 
-        //System.out.print(tickets + " reserved for " + date + " under " + lastName + firstName);
+
+        //create  a date out of the date they gave us.
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyy");
+
+        //create a out of the date format they gave us.
+        LocalDate dateOfEvent = LocalDate.parse(date, formatter);
+
+
+        //sout the result.
+        System.out.print(tickets + " reserved for " + dateOfEvent + " under " + lastName + "," + firstName);
 
     }
 }
